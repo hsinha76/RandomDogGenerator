@@ -5,6 +5,9 @@ The app generates random images of dogs using the <a href="https://dog.ceo/">Dog
 * Uses LRU cache in combination with shared preferences for persistent data storage
 * Utilizes Kotlin Flows for reactive programming
 
+### APK
+<a href="https://drive.google.com/file/d/1UMLanb_p7g3H9uPMTQM4oTDYFeHtHs48/view?usp=sharing">Download the APK</a>
+
 ## Demo
 <video src ="https://github.com/hsinha76/RandomDogGenerator/assets/5616993/d2d61692-e4ed-4ff0-8d84-16b4d32203fc"/>
 
