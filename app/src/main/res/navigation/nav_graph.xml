@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.hsdroid.randomdoggenerator.ui.fragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_generateFragment"
+            app:destination="@id/generateFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_recentlyGeneratedFragment"
+            app:destination="@id/recentlyGeneratedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/generateFragment"
+        android:name="com.hsdroid.randomdoggenerator.ui.fragments.GenerateFragment"
+        android:label="fragment_generate"
+        tools:layout="@layout/fragment_generate" />
+    <fragment
+        android:id="@+id/recentlyGeneratedFragment"
+        android:name="com.hsdroid.randomdoggenerator.ui.fragments.RecentlyGeneratedFragment"
+        android:label="fragment_recently_generated"
+        tools:layout="@layout/fragment_recently_generated" />
+</navigation>
