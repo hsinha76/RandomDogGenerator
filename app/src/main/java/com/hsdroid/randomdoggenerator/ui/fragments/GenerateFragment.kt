@@ -21,6 +21,8 @@ import com.hsdroid.randomdoggenerator.utils.CacheManager
 import kotlinx.coroutines.launch
 import com.bumptech.glide.request.target.Target
 import android.graphics.drawable.Drawable
+import android.os.Handler
+import android.os.Looper
 import androidx.vectordrawable.animated.R
 import com.hsdroid.randomdoggenerator.utils.Constants
 import com.hsdroid.randomdoggenerator.utils.LRUCache
@@ -62,9 +64,17 @@ class GenerateFragment : Fragment() {
                         is ApiState.SUCCESS -> loadImage(it.data)
                         is ApiState.FAILURE -> Toast.makeText(
                             context, it.t.toString(), Toast.LENGTH_SHORT
-                        ).show()
+                        ).show().also {
+                            Handler(Looper.getMainLooper()).postDelayed(Runnable {
+                                setGenerateButtonEnabled(true)
+                            }, 500)
+                        }
 
-                        else -> ApiState.EMPTY
+                        else -> ApiState.EMPTY.also {
+                            Handler(Looper.getMainLooper()).postDelayed(Runnable {
+                                setGenerateButtonEnabled(true)
+                            }, 500)
+                        }
                     }
                 }
             }
